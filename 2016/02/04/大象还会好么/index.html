@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="移动," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="昨天接了个活，或者说赶鸭子上架更确切一些。可能有些朋友知道，我所就职的公司有一条slogan叫做”移动信息专家”.所以我们其实在给一些企业客户提供很牛的信息服务。比如说我们就在帮当地一家汽车制造企业追踪他们的一百多位业务员，简单点说就是客户根据我们提供的定位信息给业务员核发外勤补助。本来这个世界还是很美好的，直到几个月前客户的业务员都换上了4G手机。 问题公司原有的LBS平台居然只支持2G网络，客">
+<meta name="keywords" content="移动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大象还会好么">
+<meta property="og:url" content="http://www.hillws.net/2016/02/04/大象还会好么/index.html">
+<meta property="og:site_name" content="猫窝">
+<meta property="og:description" content="昨天接了个活，或者说赶鸭子上架更确切一些。可能有些朋友知道，我所就职的公司有一条slogan叫做”移动信息专家”.所以我们其实在给一些企业客户提供很牛的信息服务。比如说我们就在帮当地一家汽车制造企业追踪他们的一百多位业务员，简单点说就是客户根据我们提供的定位信息给业务员核发外勤补助。本来这个世界还是很美好的，直到几个月前客户的业务员都换上了4G手机。 问题公司原有的LBS平台居然只支持2G网络，客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-02-04T12:22:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大象还会好么">
+<meta name="twitter:description" content="昨天接了个活，或者说赶鸭子上架更确切一些。可能有些朋友知道，我所就职的公司有一条slogan叫做”移动信息专家”.所以我们其实在给一些企业客户提供很牛的信息服务。比如说我们就在帮当地一家汽车制造企业追踪他们的一百多位业务员，简单点说就是客户根据我们提供的定位信息给业务员核发外勤补助。本来这个世界还是很美好的，直到几个月前客户的业务员都换上了4G手机。 问题公司原有的LBS平台居然只支持2G网络，客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.hillws.net/2016/02/04/大象还会好么/"/>
+
+
+
+
+
+  <title>大象还会好么 | 猫窝</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">猫窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Live long and prosper!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hillws.net/2016/02/04/大象还会好么/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三脚猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猫窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">大象还会好么</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-04T21:57:00+08:00">
+                2016-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/分享/" itemprop="url" rel="index">
+                    <span itemprop="name">分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/02/04/大象还会好么/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/04/大象还会好么/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>昨天接了个活，或者说赶鸭子上架更确切一些。可能有些朋友知道，我所就职的公司有一条slogan叫做”移动信息专家”.所以我们其实在给一些企业客户提供很牛的信息服务。比如说我们就在帮当地一家汽车制造企业追踪他们的一百多位业务员，简单点说就是客户根据我们提供的定位信息给业务员核发外勤补助。本来这个世界还是很美好的，直到几个月前客户的业务员都换上了4G手机。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>公司原有的LBS平台居然只支持2G网络，客户家的业务员用了4G手机驻留在4G网络上之后平台就不能定位了。多次联系上级公司和服务提供商都说解决不了…解决不了….了… 话说现在已经是2016年，我记得4G网络商用还是14年初的事情。</p>
+<h2 id="求索"><a href="#求索" class="headerlink" title="求索"></a>求索</h2><ul>
+<li>给客户推荐了替代业务”外勤通”.结果这个业务定位需要手机安装app还得常驻后台运行，经常就被终止进程无法定位。业务员也不能接受主动签到的繁琐操作。失败。</li>
+<li>给客户提供业务员漫游城市记录。结果客户说这种精度可以接受省内，但是新疆、宁夏这种地方你说个城市，叫我怎么知道我的人去了哪？失败。</li>
+</ul>
+<h2 id="挣扎"><a href="#挣扎" class="headerlink" title="挣扎"></a>挣扎</h2><p>眼看客户就要解除合同，最后车总说我们给客户提供业务员通话基站的位置信息，精度就能达到要求了。兵分两路，去获取业务员的基站记录和基站对应的经纬度信息。左路军联系业支调取基站记录，经过戚工努力，拿到了合适的数据。结果右路军在搞基站经纬度信息时，遇到好多挫折。既然这个博客努力的想伪装成技术博，所以我们重点说说基站经纬度获取的过程，减少一些无谓的吐槽。</p>
+<h2 id="基站位置信息获取"><a href="#基站位置信息获取" class="headerlink" title="基站位置信息获取"></a>基站位置信息获取</h2><p>本来呢，这些信息应该是公司内部获取比较方便，可惜我们级别都太低，路子也不够野，联系了一些朋友之后都没能搞定。嗯，我们复习一下那条slogan，”移动信息专家”.好在天无绝人之路，之前试验过几个免费的API，可以查询基站经纬度，有些还自带经纬度反查的位置详细信息。之前没有这么迫切的需求，我简单试过几个，感觉数据都不太全。这次实在躲不过去了，找了一个看上去比较靠谱的：<a href="http://www.cellocation.com/" target="_blank" rel="noopener">LBS数据仓库</a> ，根据他自己的宣传，三家运营商的基站数据加起来达到了千万级别，应该是比较全了。不过，免费的总是伴随着折腾。这个接口限制5分钟只能查询300次，一天只能查询5000次。昨天晚上我非常沮丧，因为我用了我的卡西欧科学计算器计算了一下，每秒查询一次按说就能查询到5000次不受限制，结果我把延时都加到5秒了，仍然是到300次就不允许查了.搞的我十分怀疑我数学是不是该重修加减乘除。好在这个接口网站上留了个qq，我跟这位好心的站长聊了一下，他说收费的一个月300元,我只需要查询1万次左右，建议用免费的，分两天查。我十分感动，这哥们没有上来就收我钱，靠谱。然后我就跟他说为啥我每次到300次就给限制了，哥们居然答应第二天帮我看看…然后就是今天，我终于可以一秒一次查询到5000次了。太靠谱了，大哥，以后有需要我绝对找你充值好么。<br>顺便安利一下<a href="http://docs.python-requests.org/en/master/" target="_blank" rel="noopener">Requests: HTTP for Humans</a> 这个HTTP库，比python自带的urllib强一千倍。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">URL=<span class="string">"http://api.cellocation.com/cell/"</span></span><br><span class="line">payload=&#123;<span class="string">"mcc"</span>:<span class="number">460</span>,<span class="string">"mnc"</span>:<span class="number">1</span>,<span class="string">"lac"</span>:<span class="number">12382</span>,<span class="string">"ci"</span>:<span class="number">45941</span>,<span class="string">"output"</span>:<span class="string">"json"</span>,<span class="string">"coord"</span>:<span class="string">"gcj02"</span>&#125;</span><br><span class="line">话单 = pd.read_excel(<span class="string">"业支中心提供基站记录.xls"</span>)</span><br><span class="line">话单.dropna(subset=[<span class="string">"LAC_ID"</span>],inplace=<span class="keyword">True</span>)</span><br><span class="line">话单.dropna(subset=[<span class="string">"CELL_ID"</span>],inplace=<span class="keyword">True</span>)</span><br><span class="line">话单[<span class="string">"lac"</span>]=话单[<span class="string">"LAC_ID"</span>].map(<span class="keyword">lambda</span> x:int(str(x),<span class="number">16</span>))</span><br><span class="line">话单[<span class="string">"ci"</span>]=话单[<span class="string">"CELL_ID"</span>].map(<span class="keyword">lambda</span> x:int(str(x),<span class="number">16</span>))</span><br><span class="line">基站=话单[[<span class="string">"lac"</span>,<span class="string">"ci"</span>]].drop_duplicates()</span><br><span class="line">lac=基站[<span class="string">"lac"</span>].tolist()</span><br><span class="line">ci=基站[<span class="string">"ci"</span>].tolist()</span><br><span class="line">l=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5000</span>):</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">"正在获取:"</span>+str(i))</span><br><span class="line">    payload[<span class="string">"lac"</span>]=lac[i]</span><br><span class="line">    payload[<span class="string">"ci"</span>]=ci[i]</span><br><span class="line">    r = requests.get(URL, params=payload)</span><br><span class="line">    s=pd.Series(r.json())</span><br><span class="line">    s[<span class="string">"lac"</span>]=lac[i]</span><br><span class="line">    s[<span class="string">"ci"</span>]=ci[i]</span><br><span class="line">    df=pd.DataFrame(s).transpose()</span><br><span class="line">    l.append(df)</span><br><span class="line">基站位置=pd.concat(l)</span><br><span class="line">基站位置.to_excel(<span class="string">"基站位置.xlsx"</span>)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">address</th>
+<th style="text-align:center">errcode</th>
+<th style="text-align:center">lat</th>
+<th style="text-align:center">lon</th>
+<th style="text-align:center">radius</th>
+<th style="text-align:center">lac</th>
+<th style="text-align:center">ci</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">吉林省通化市柳河县柳南乡西腰沟村;303国道与正英线路口西北3151米</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">41.917398</td>
+<td style="text-align:center">125.686328</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">17309</td>
+<td style="text-align:center">5033</td>
+</tr>
+<tr>
+<td style="text-align:center">江苏省徐州市鼓楼区大庙镇佟村村;金凤路与徐海路路口东北323米</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">34.280809</td>
+<td style="text-align:center">117.321079</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">20893</td>
+<td style="text-align:center">18165</td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+</tbody>
+</table>
+<p>话说并不用等第二天，只需要有个能拨一次号就换一次公网IP的宽带连接就好了，拨两次号，就查完了。最后关联一下基站记录，就能给客户提供一份足够精度的业务员外勤记录了。怕他们查询不方便，给每个号码生成了一个月内的基站记录KML文件，谷歌地球打开就能看到活动范围。至于明天去拜访客户之后他们能不能满意，那就是另外一个故事了。</p>
+<h2 id="标题是什么鬼"><a href="#标题是什么鬼" class="headerlink" title="标题是什么鬼"></a>标题是什么鬼</h2><p>嗯，就是吐槽么，呵呵。整天忙着给别人信息化，结果把自己家落下了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动/" rel="tag"># 移动</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/22/谷歌地球在数据可视化中的应用/" rel="next" title="谷歌地球在数据可视化中的应用">
+                <i class="fa fa-chevron-left"></i> 谷歌地球在数据可视化中的应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/22/ubuntu16.04下安装docker/" rel="prev" title="ubuntu16.04下安装docker">
+                ubuntu16.04下安装docker <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/04/大象还会好么/"
+           data-title="大象还会好么" data-url="http://www.hillws.net/2016/02/04/大象还会好么/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三脚猫" />
+          <p class="site-author-name" itemprop="name">三脚猫</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.weibo.com/hillws" title="新浪微博" target="_blank">新浪微博</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求索"><span class="nav-number">2.</span> <span class="nav-text">求索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挣扎"><span class="nav-number">3.</span> <span class="nav-text">挣扎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基站位置信息获取"><span class="nav-number">4.</span> <span class="nav-text">基站位置信息获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标题是什么鬼"><span class="nav-number">5.</span> <span class="nav-text">标题是什么鬼</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">三脚猫</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Muse
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hillblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

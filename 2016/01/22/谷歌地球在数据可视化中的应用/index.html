@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="这周网络部和建设部组织的4G基站确址工作到淄川了，过去掺和了一下，发现谷歌地球不仅是好玩的玩具，在工作中也十分趁手。已建成的基站信息全部生成kml文件在谷歌地球中进行标注，可以很方便的查看拟建站与已建成站的距离等信息，讨论后标记拟建站位置也很顺手。其实市场口也是需要基于位置的可视化信息的，比如说我们经常想看看哪些区域我们的渠道相比友商要少。周末有时间了就试着把我们已经搜集的渠道位置信息生成kml文">
+<meta name="keywords" content="数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谷歌地球在数据可视化中的应用">
+<meta property="og:url" content="http://www.hillws.net/2016/01/22/谷歌地球在数据可视化中的应用/index.html">
+<meta property="og:site_name" content="猫窝">
+<meta property="og:description" content="这周网络部和建设部组织的4G基站确址工作到淄川了，过去掺和了一下，发现谷歌地球不仅是好玩的玩具，在工作中也十分趁手。已建成的基站信息全部生成kml文件在谷歌地球中进行标注，可以很方便的查看拟建站与已建成站的距离等信息，讨论后标记拟建站位置也很顺手。其实市场口也是需要基于位置的可视化信息的，比如说我们经常想看看哪些区域我们的渠道相比友商要少。周末有时间了就试着把我们已经搜集的渠道位置信息生成kml文">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.hillws.net/img/2016/01/agentkml.png">
+<meta property="og:updated_time" content="2016-01-27T07:59:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谷歌地球在数据可视化中的应用">
+<meta name="twitter:description" content="这周网络部和建设部组织的4G基站确址工作到淄川了，过去掺和了一下，发现谷歌地球不仅是好玩的玩具，在工作中也十分趁手。已建成的基站信息全部生成kml文件在谷歌地球中进行标注，可以很方便的查看拟建站与已建成站的距离等信息，讨论后标记拟建站位置也很顺手。其实市场口也是需要基于位置的可视化信息的，比如说我们经常想看看哪些区域我们的渠道相比友商要少。周末有时间了就试着把我们已经搜集的渠道位置信息生成kml文">
+<meta name="twitter:image" content="http://www.hillws.net/img/2016/01/agentkml.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.hillws.net/2016/01/22/谷歌地球在数据可视化中的应用/"/>
+
+
+
+
+
+  <title>谷歌地球在数据可视化中的应用 | 猫窝</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">猫窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Live long and prosper!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hillws.net/2016/01/22/谷歌地球在数据可视化中的应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="三脚猫">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猫窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">谷歌地球在数据可视化中的应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-22T21:57:00+08:00">
+                2016-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/分享/" itemprop="url" rel="index">
+                    <span itemprop="name">分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/01/22/谷歌地球在数据可视化中的应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/谷歌地球在数据可视化中的应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这周网络部和建设部组织的4G基站确址工作到淄川了，过去掺和了一下，发现谷歌地球不仅是好玩的玩具，在工作中也十分趁手。已建成的基站信息全部生成kml文件在谷歌地球中进行标注，可以很方便的查看拟建站与已建成站的距离等信息，讨论后标记拟建站位置也很顺手。其实市场口也是需要基于位置的可视化信息的，比如说我们经常想看看哪些区域我们的渠道相比友商要少。周末有时间了就试着把我们已经搜集的渠道位置信息生成kml文件来通过谷歌地球进行可视化。</p>
+<h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h2><p>渠道的各种信息都通过BOSS系统进行管理，但是信息只能逐条查阅，不便于使用。好在业务支撑中心的攻城狮制作了报表，把各类渠道信息都整合在一起，供渠道管理人员使用。我们可以下载到一个这样的excel表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">渠道名称</th>
+<th style="text-align:center">渠道类型</th>
+<th style="text-align:center">….</th>
+<th style="text-align:center">经度</th>
+<th style="text-align:center">纬度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">渠道1</td>
+<td style="text-align:center">加盟店</td>
+<td style="text-align:center">….</td>
+<td style="text-align:center">137.666</td>
+<td style="text-align:center">108.222</td>
+</tr>
+</tbody>
+</table>
+<p>其他信息我们暂时不关心，有这几列数据就够了。</p>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>有了锤子，看什么都是钉子。我们仍然使用方便趁手的python来完成。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df=pd.read_excel(<span class="string">"渠道资料2016.1.19.xls"</span>) <span class="comment">#读取excel表</span></span><br><span class="line">df[[<span class="string">"经度"</span>,<span class="string">"纬度"</span>]]=df[[<span class="string">"经度"</span>,<span class="string">"纬度"</span>]].replace(<span class="string">"-"</span>,np.nan) <span class="comment">#将没有经度和维度信息的数据行置空</span></span><br><span class="line">df.dropna(inplace=<span class="keyword">True</span>,subset=[<span class="string">"经度"</span>,<span class="string">"纬度"</span>] ,how=<span class="string">"any"</span>) <span class="comment">#抛弃空值</span></span><br><span class="line">渠道名称=df.渠道名称.tolist()</span><br><span class="line">渠道类型=df.渠道类型.tolist()</span><br><span class="line">经度=df.经度.tolist()</span><br><span class="line">纬度=df.纬度.tolist() <span class="comment">#把信息转换为列表方便遍历</span></span><br></pre></td></tr></table></figure>
+<p>这样信息就处理好了，我们可以使用从excel表格读取的数据来生成kml文件了。</p>
+<h2 id="KML文件简介"><a href="#KML文件简介" class="headerlink" title="KML文件简介"></a>KML文件简介</h2><p>KML实际上是google地球使用的标记语言，结构比较简单。最基本的地标KML长这样：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">kml</span> <span class="attr">xmlns</span>=<span class="string">"http://www.opengis.net/kml/2.2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Placemark</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">name</span>&gt;</span>Simple placemark<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">description</span>&gt;</span>Attached to the ground. Intelligently places itself at the height of the underlying terrain.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">Point</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">coordinates</span>&gt;</span>-122.0822035425683,37.42228990140251,0<span class="tag">&lt;/<span class="name">coordinates</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">Point</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">Placemark</span>&gt;</span> <span class="tag">&lt;/<span class="name">kml</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>该文件的结构分解如下：</p>
+<ul>
+<li>XML 标头。这是每个 KML 文件的第1行。该行前面不能有空格或其他字符。</li>
+<li>KML 命名空间声明。这是每个KML 2.2文件的第2行。</li>
+<li>包含以下元素的地标对象：<ul>
+<li>用作地标标签的名称</li>
+<li>附着到地标的“提示框”中显示的说明</li>
+<li>指定地标在地球表面的位置的点 - 经度、纬度和高度（可选）</li>
+</ul>
+</li>
+</ul>
+<p>这样我们已经获取的4列数据渠道名称、渠道类型、经度、维度 正好满足生成最简单地标的需要。</p>
+<h2 id="使用pykml模块生成KML文件"><a href="#使用pykml模块生成KML文件" class="headerlink" title="使用pykml模块生成KML文件"></a>使用pykml模块生成KML文件</h2><p>pyKML 是一个开源的 Python 库，用来生成、解析和修改 KML 。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pykml.factory <span class="keyword">import</span> KML_ElementMaker <span class="keyword">as</span> KML <span class="comment">#使用factory模块</span></span><br><span class="line">fld=KML.Folder()</span><br><span class="line">fld.name=<span class="string">"渠道信息"</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(渠道名称)):</span><br><span class="line">    tmp_pm=KML.Placemark( KML.name(渠道名称[i]),KML.description(渠道类型[i]),KML.Point(KML.coordinates(str(经度[i])+<span class="string">","</span>+str(纬度[i]))))</span><br><span class="line">     fld.append(tmp_pm)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">content = etree.tostring(etree.ElementTree(fld),pretty_print=<span class="keyword">True</span>).decode(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment">#保存到文件，然后就可以在Google地球中打开了</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'渠道信息.kml'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    fp.write(content)</span><br></pre></td></tr></table></figure></p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="/img/2016/01/agentkml.png" alt="演示"></p>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2><p>实际上还有很多要做的，不过已经很晚了，先不搞了。</p>
+<ul>
+<li>位置有偏移，需要确认下是火星坐标的问题还是数据采集的质量不高导致的。</li>
+<li>渠道数量很多，需要根据类型进行分类，不同文件夹、不同图标、……</li>
+<li>需要叠加友商的渠道信息</li>
+<li>…</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据/" rel="tag"># 数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/11/淄博二手房价格/" rel="next" title="淄博二手房价格">
+                <i class="fa fa-chevron-left"></i> 淄博二手房价格
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/04/大象还会好么/" rel="prev" title="大象还会好么">
+                大象还会好么 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/22/谷歌地球在数据可视化中的应用/"
+           data-title="谷歌地球在数据可视化中的应用" data-url="http://www.hillws.net/2016/01/22/谷歌地球在数据可视化中的应用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="三脚猫" />
+          <p class="site-author-name" itemprop="name">三脚猫</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.weibo.com/hillws" title="新浪微博" target="_blank">新浪微博</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据获取"><span class="nav-number">1.</span> <span class="nav-text">数据获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据处理"><span class="nav-number">2.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KML文件简介"><span class="nav-number">3.</span> <span class="nav-text">KML文件简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用pykml模块生成KML文件"><span class="nav-number">4.</span> <span class="nav-text">使用pykml模块生成KML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">5.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">6.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">三脚猫</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Muse
+    </a>
+  </div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hillblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
